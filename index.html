@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Squishia — Squishies sensoriels & slow rising dès 2 €</title>
+  <meta name="description" content="Squishies sensoriels, slow rising et gourmands. Dès 2 € le squishy, packs de 2, 6 ou 12, livraison offerte en 3 jours." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='54' r='38' fill='%23FF5B14'/><path d='M50 18c6-10 18-12 24-8-4 8-14 12-24 8z' fill='%2389B87A'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>document.documentElement.classList.add("js")</script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/cro.css" />
+</head>
+<body>
+
+  <div class="announce">
+    <div class="container announce-inner">
+      <span>🚚 Livraison offerte en 3 jours</span>
+      <span class="sep"></span>
+      <span id="shipTimer">Commande avant 14 h : expédié aujourd'hui</span>
+      <span class="sep hide-sm"></span>
+      <span class="hide-sm">Retours 30 jours</span>
+    </div>
+  </div>
+
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <button class="icon-btn burger" id="burger" aria-label="Menu">
+        <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="#boutique">Boutique</a>
+        <a href="#packs">Packs</a>
+        <a href="#halloween">Halloween</a>
+        <a href="#calendrier">Calendrier</a>
+        <a href="#faq">Aide</a>
+      </nav>
+
+      <a href="#top" class="logo" aria-label="Squishia, accueil"><img src="images/logo.png" alt="Squishia" /></a>
+
+      <div class="header-actions">
+        <a href="#boutique" class="shop-pill">Boutique</a>
+        <div class="search" id="search">
+          <button class="icon-btn" id="searchBtn" aria-label="Rechercher">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          </button>
+          <div class="search-panel" id="searchPanel">
+            <input type="search" id="searchInput" placeholder="Rechercher un squishy" autocomplete="off" aria-label="Rechercher un squishy" />
+            <div class="search-results" id="searchResults"></div>
+          </div>
+        </div>
+        <button class="icon-btn" id="wishBtn" aria-label="Favoris">
+          <svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"/></svg>
+          <span class="bubble" id="wishCount">0</span>
+        </button>
+        <button class="icon-btn" id="cartBtn" aria-label="Panier">
+          <svg viewBox="0 0 24 24"><path d="M5 8h14l-1.1 11.1a2 2 0 0 1-2 1.9H8.1a2 2 0 0 1-2-1.9L5 8z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg>
+          <span class="bubble" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="kicker">Nouvelle collection</span>
+          <h1>Des squishies si doux qu'on ne les lâche plus.</h1>
+          <p class="lead">Perles de gel, mousse slow rising, gourmandises plus vraies que nature. Choisis tes préférés, compose ton pack et reçois-le en 3 jours.</p>
+          <div class="hero-rating"><span class="stars-big">★★★★★</span> <b>4,9/5</b> · <span id="heroReviews">+12 000</span> avis vérifiés</div>
+          <div class="hero-cta">
+            <a href="#packs" class="btn btn-cta">Composer mon pack dès 3,95 €</a>
+            <a href="#boutique" class="btn btn-outline">Voir la boutique</a>
+          </div>
+          <p class="hero-micro">✓ Livraison offerte &nbsp; ✓ Satisfait ou remboursé 30 jours &nbsp; ✓ Paiement 100 % sécurisé</p>
+          <ul class="hero-proof">
+            <li><b>Dès 2 €</b> le squishy</li>
+            <li><b>Livraison offerte</b> en 3 jours</li>
+            <li><b>Certifié EN71</b></li>
+          </ul>
+        </div>
+        <div class="hero-media">
+          <figure class="hm hm-1"><img src="images/raisin-perles.jpg" alt="Raisin Perles Géantes" /></figure>
+          <figure class="hm hm-2"><img src="images/donuts-pastel.jpg" alt="Donut Pastel Glacé" /></figure>
+          <figure class="hm hm-3"><img src="images/boules-paillettes.jpg" alt="Boules Paillettes Kawaii" /></figure>
+          <div class="hero-tag"><span>Le préféré du moment</span><b>Raisin Perles Géantes</b></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RÉASSURANCE -->
+    <section class="section section-tight">
+      <div class="container perks">
+        <div class="perk">
+          <svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg>
+          <div><b>Livraison offerte</b><span>Reçu en 3 jours</span></div>
+        </div>
+        <div class="perk">
+          <svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
+          <div><b>Certifié EN71</b><span>Matières sans danger</span></div>
+        </div>
+        <div class="perk">
+          <svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4v4h4"/></svg>
+          <div><b>Retours 30 jours</b><span>Satisfait ou remboursé</span></div>
+        </div>
+        <div class="perk">
+          <svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+          <div><b>Paiement sécurisé</b><span>CB, PayPal, Apple Pay</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PACKS -->
+    <section class="section" id="packs">
+      <div class="container">
+        <div class="section-head center">
+          <span class="kicker">Packs</span>
+          <h2>Compose ton pack</h2>
+          <p>Mélange les modèles comme tu veux, jusqu'à 12 par commande. Le prix du pack s'applique automatiquement au panier.</p>
+        </div>
+        <div class="packs" id="packGrid"><button class="pack  " data-n="1">
+      
+      <span class="pack-name">Solo</span>
+      <span class="pack-count">1 squishy</span>
+      <span class="pack-price">2,00 €</span>
+      <span class="pack-sub">Pour essayer</span>
+      <span class="pack-cta">Choisir mon squishy <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+    </button><button class="pack  " data-n="2">
+      
+      <span class="pack-name">Duo</span>
+      <span class="pack-count">2 squishies</span>
+      <span class="pack-price">3,95 €</span>
+      <span class="pack-sub">Un pour toi, un à offrir</span>
+      <span class="pack-cta">Choisir mes 2 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+    </button><button class="pack  pop" data-n="6">
+      <span class="pack-flag pop">Le plus choisi</span>
+      <span class="pack-name">Pack 6</span>
+      <span class="pack-count">6 squishies</span>
+      <span class="pack-price">9,99 €</span>
+      <span class="pack-sub">Le meilleur rapport pour commencer</span>
+      <span class="pack-cta">Choisir mes 6 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+    </button><button class="pack hot " data-n="12">
+      <span class="pack-flag">Le plus complet</span>
+      <span class="pack-name">Méga pack</span>
+      <span class="pack-count">12 squishies</span>
+      <span class="pack-price">19,99 €</span>
+      <span class="pack-sub">Le maximum par commande</span>
+      <span class="pack-cta">Choisir mes 12 <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+    </button></div>
+      </div>
+    </section>
+
+    <!-- UNIVERS -->
+    <section class="section section-tight">
+      <div class="container">
+        <div class="section-head">
+          <h2>Explorer par univers</h2>
+        </div>
+        <div class="universes" id="universes">
+    <button class="universe" data-i="0">
+      <span class="universe-media"><img class="" src="images/raisin-perles.jpg" alt="Raisin Perles Géantes" loading="lazy" decoding="async" draggable="false"></span>
+      <span class="universe-label"><b>Sensoriel</b><small>Perles, gel et billes</small></span>
+    </button>
+    <button class="universe" data-i="1">
+      <span class="universe-media"><img class="" src="images/donuts-pastel.jpg" alt="Donut Pastel Glacé" loading="lazy" decoding="async" draggable="false"></span>
+      <span class="universe-label"><b>Gourmandises</b><small>Beurres, donuts, chocolat</small></span>
+    </button>
+    <button class="universe" data-i="2">
+      <span class="universe-media"><img class="" src="images/pasteque-juicy.jpg" alt="Pastèque Juicy" loading="lazy" decoding="async" draggable="false"></span>
+      <span class="universe-label"><b>Fruits</b><small>Mangue, pastèque, pomme</small></span>
+    </button>
+    <button class="universe" data-i="3">
+      <span class="universe-media"><img class="" src="images/lingot-or.jpg" alt="Lingot d'Or Squishy" loading="lazy" decoding="async" draggable="false"></span>
+      <span class="universe-label"><b>Fantaisie</b><small>Lingots, savons, potions</small></span>
+    </button>
+    <button class="universe" data-i="4">
+      <span class="universe-media"><img class="" src="images/citrouille-doree.jpg" alt="Citrouille Dorée" loading="lazy" decoding="async" draggable="false"></span>
+      <span class="universe-label"><b>Halloween</b><small>Édition de saison</small></span>
+    </button></div>
+      </div>
+    </section>
+
+    <!-- BOUTIQUE -->
+    <section class="section section-shop" id="boutique">
+      <div class="container">
+        <div class="section-head split">
+          <div>
+            <span class="kicker">Boutique</span>
+            <h2>Tous les squishies</h2>
+          </div>
+          <label class="sort">
+            <span>Trier</span>
+            <select id="sortSelect" aria-label="Trier">
+              <option value="featured">Sélection</option>
+              <option value="new">Nouveautés</option>
+              <option value="rating">Mieux notés</option>
+              <option value="rise">Remontée la plus lente</option>
+            </select>
+          </label>
+        </div>
+        <div class="tabs" id="chips" role="tablist"><button class="tab active" data-i="0" role="tab" aria-selected="true">Tout</button><button class="tab " data-i="1" role="tab" aria-selected="false">Nouveautés</button><button class="tab " data-i="2" role="tab" aria-selected="false">Best-sellers</button><button class="tab " data-i="3" role="tab" aria-selected="false">Sensoriel</button><button class="tab " data-i="4" role="tab" aria-selected="false">Gourmandises</button><button class="tab " data-i="5" role="tab" aria-selected="false">Fruits</button><button class="tab " data-i="6" role="tab" aria-selected="false">Fantaisie</button><button class="tab " data-i="7" role="tab" aria-selected="false">Halloween</button></div>
+        <p class="results" id="resultsCount"></p>
+        <div class="grid" id="productGrid"><article class="card" data-id="tube-paillettes-halloween">
+      <div class="card-media">
+        <img class="" src="images/tube-paillettes-halloween.jpg" alt="Tube Paillettes Halloween" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Tube Paillettes Halloween aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Tube Paillettes Halloween au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Tube Paillettes Halloween</h3>
+        <div class="card-meta"><span>Halloween</span><span class="stars" aria-label="Note 4.9 sur 5">★ 4,9</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">225 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="citrouille-doree">
+      <div class="card-media">
+        <img class="" src="images/citrouille-doree.jpg" alt="Citrouille Dorée" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Citrouille Dorée aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Citrouille Dorée au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Citrouille Dorée</h3>
+        <div class="card-meta"><span>Halloween</span><span class="stars" aria-label="Note 4.9 sur 5">★ 4,9</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">137 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="pomme-araignee">
+      <div class="card-media">
+        <img class="" src="images/pomme-araignee.jpg" alt="Pomme Toile d'Araignée" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Pomme Toile d'Araignée aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Pomme Toile d'Araignée au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Pomme Toile d'Araignée</h3>
+        <div class="card-meta"><span>Halloween</span><span class="stars" aria-label="Note 4.8 sur 5">★ 4,8</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">136 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="pochettes-gel">
+      <div class="card-media">
+        <img class="" src="images/pochettes-gel.jpg" alt="Pochettes Gel Mellow" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Pochettes Gel Mellow aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Pochettes Gel Mellow au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Pochettes Gel Mellow</h3>
+        <div class="card-meta"><span>Sensoriel</span><span class="stars" aria-label="Note 4.9 sur 5">★ 4,9</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">161 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="boule-mouchetee">
+      <div class="card-media">
+        <img class="" src="images/boule-mouchetee.jpg" alt="Boule Mouchetée" loading="lazy" decoding="async" draggable="false">
+        <span class="badge best">Best-seller</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Boule Mouchetée aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Boule Mouchetée au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Boule Mouchetée</h3>
+        <div class="card-meta"><span>Sensoriel</span><span class="stars" aria-label="Note 4.9 sur 5">★ 4,9</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-urgent">Plus que 6 en stock</div>
+      </div>
+    </article><article class="card" data-id="boule-rose-douce">
+      <div class="card-media">
+        <img class="" src="images/boule-rose-douce.jpg" alt="Boule Rose Douce" loading="lazy" decoding="async" draggable="false">
+        <span class="badge best">Best-seller</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Boule Rose Douce aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Boule Rose Douce au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Boule Rose Douce</h3>
+        <div class="card-meta"><span>Sensoriel</span><span class="stars" aria-label="Note 4.9 sur 5">★ 4,9</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">191 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="donut-menthe">
+      <div class="card-media">
+        <img class="" src="images/donut-menthe.jpg" alt="Donut Menthe Givrée" loading="lazy" decoding="async" draggable="false">
+        <span class="badge best">Best-seller</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Donut Menthe Givrée aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Donut Menthe Givrée au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Donut Menthe Givrée</h3>
+        <div class="card-meta"><span>Gourmandises</span><span class="stars" aria-label="Note 4.8 sur 5">★ 4,8</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">187 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="pot-miel-chiboki">
+      <div class="card-media">
+        <img class="" src="images/pot-miel-chiboki.jpg" alt="Pot de Miel Chiboki" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Pot de Miel Chiboki aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Pot de Miel Chiboki au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Pot de Miel Chiboki</h3>
+        <div class="card-meta"><span>Gourmandises</span><span class="stars" aria-label="Note 4.9 sur 5">★ 4,9</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-urgent">Plus que 6 en stock</div>
+      </div>
+    </article><article class="card" data-id="lait-chiboki">
+      <div class="card-media">
+        <img class="" src="images/lait-chiboki.jpg" alt="Bouteille de Lait Chiboki" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Bouteille de Lait Chiboki aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Bouteille de Lait Chiboki au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Bouteille de Lait Chiboki</h3>
+        <div class="card-meta"><span>Gourmandises</span><span class="stars" aria-label="Note 4.8 sur 5">★ 4,8</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">67 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="fiole-potion">
+      <div class="card-media">
+        <img class="" src="images/fiole-potion.jpg" alt="Fiole Potion Magique" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Fiole Potion Magique aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Fiole Potion Magique au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Fiole Potion Magique</h3>
+        <div class="card-meta"><span>Halloween</span><span class="stars" aria-label="Note 4.9 sur 5">★ 4,9</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">104 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="bocal-fruits-gelee">
+      <div class="card-media">
+        <img class="" src="images/bocal-fruits-gelee.jpg" alt="Bocal Fruits en Gelée" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Bocal Fruits en Gelée aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Bocal Fruits en Gelée au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Bocal Fruits en Gelée</h3>
+        <div class="card-meta"><span>Fruits</span><span class="stars" aria-label="Note 4.8 sur 5">★ 4,8</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">101 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="pomme-verte">
+      <div class="card-media">
+        <img class="" src="images/pomme-verte.jpg" alt="Pomme Verte Squishy" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Pomme Verte Squishy aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Pomme Verte Squishy au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Pomme Verte Squishy</h3>
+        <div class="card-meta"><span>Fruits</span><span class="stars" aria-label="Note 4.8 sur 5">★ 4,8</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">210 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="cube-fromage">
+      <div class="card-media">
+        <img class="" src="images/cube-fromage.jpg" alt="Cube Fromage Squishy" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Cube Fromage Squishy aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Cube Fromage Squishy au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Cube Fromage Squishy</h3>
+        <div class="card-meta"><span>Gourmandises</span><span class="stars" aria-label="Note 4.8 sur 5">★ 4,8</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-urgent">Plus que 4 en stock</div>
+      </div>
+    </article><article class="card" data-id="mochi-coeur-colore">
+      <div class="card-media">
+        <img class="" src="images/mochi-coeur-colore.jpg" alt="Mochi Cœur Coloré" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Mochi Cœur Coloré aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Mochi Cœur Coloré au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Mochi Cœur Coloré</h3>
+        <div class="card-meta"><span>Sensoriel</span><span class="stars" aria-label="Note 4.9 sur 5">★ 4,9</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">63 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="boule-ocean-perles">
+      <div class="card-media">
+        <img class="" src="images/boule-ocean-perles.jpg" alt="Boule Océan Perles" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Boule Océan Perles aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Boule Océan Perles au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Boule Océan Perles</h3>
+        <div class="card-meta"><span>Sensoriel</span><span class="stars" aria-label="Note 4.9 sur 5">★ 4,9</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">179 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="boule-choco-caramel">
+      <div class="card-media">
+        <img class="" src="images/boule-choco-caramel.jpg" alt="Boule Choco Caramel" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Boule Choco Caramel aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Boule Choco Caramel au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Boule Choco Caramel</h3>
+        <div class="card-meta"><span>Gourmandises</span><span class="stars" aria-label="Note 4.7 sur 5">★ 4,7</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">89 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="guimauve-marbree">
+      <div class="card-media">
+        <img class="" src="images/guimauve-marbree.jpg" alt="Guimauve Marbrée" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Guimauve Marbrée aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Guimauve Marbrée au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Guimauve Marbrée</h3>
+        <div class="card-meta"><span>Sensoriel</span><span class="stars" aria-label="Note 4.8 sur 5">★ 4,8</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">79 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="donut-fleuri">
+      <div class="card-media">
+        <img class="" src="images/donut-fleuri.jpg" alt="Donut Fleuri" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Donut Fleuri aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Donut Fleuri au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Donut Fleuri</h3>
+        <div class="card-meta"><span>Gourmandises</span><span class="stars" aria-label="Note 4.8 sur 5">★ 4,8</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">153 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="pochette-galaxie">
+      <div class="card-media">
+        <img class="" src="images/pochette-galaxie.jpg" alt="Pochette Paillettes Galaxie" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Pochette Paillettes Galaxie aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Pochette Paillettes Galaxie au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Pochette Paillettes Galaxie</h3>
+        <div class="card-meta"><span>Fantaisie</span><span class="stars" aria-label="Note 4.8 sur 5">★ 4,8</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">111 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="citrouille-jelly">
+      <div class="card-media">
+        <img class="" src="images/citrouille-jelly.jpg" alt="Citrouille Jelly" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Citrouille Jelly aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Citrouille Jelly au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Citrouille Jelly</h3>
+        <div class="card-meta"><span>Halloween</span><span class="stars" aria-label="Note 4.8 sur 5">★ 4,8</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">88 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="petit-fantome">
+      <div class="card-media">
+        <img class="" src="images/petit-fantome.jpg" alt="Petit Fantôme" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Petit Fantôme aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Petit Fantôme au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Petit Fantôme</h3>
+        <div class="card-meta"><span>Halloween</span><span class="stars" aria-label="Note 4.9 sur 5">★ 4,9</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-urgent">Plus que 6 en stock</div>
+      </div>
+    </article><article class="card" data-id="porte-cles-perles">
+      <div class="card-media">
+        <img class="" src="images/porte-cles-perles.jpg" alt="Porte-clés Perles Bleues" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Porte-clés Perles Bleues aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Porte-clés Perles Bleues au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Porte-clés Perles Bleues</h3>
+        <div class="card-meta"><span>Sensoriel</span><span class="stars" aria-label="Note 4.7 sur 5">★ 4,7</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">181 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="bretzel-choco">
+      <div class="card-media">
+        <img class="" src="images/bretzel-choco.jpg" alt="Bretzel Choco Menthe" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Bretzel Choco Menthe aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Bretzel Choco Menthe au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Bretzel Choco Menthe</h3>
+        <div class="card-meta"><span>Gourmandises</span><span class="stars" aria-label="Note 4.7 sur 5">★ 4,7</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-urgent">Plus que 5 en stock</div>
+      </div>
+    </article><article class="card" data-id="oursons-gummy">
+      <div class="card-media">
+        <img class="" src="images/oursons-gummy.jpg" alt="Oursons Gummy Géants" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Oursons Gummy Géants aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Oursons Gummy Géants au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Oursons Gummy Géants</h3>
+        <div class="card-meta"><span>Animaux</span><span class="stars" aria-label="Note 4.9 sur 5">★ 4,9</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-urgent">Plus que 8 en stock</div>
+      </div>
+    </article><article class="card" data-id="tubes-gel">
+      <div class="card-media">
+        <img class="" src="images/tubes-gel.jpg" alt="Tubes Gel Bubbles" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Tubes Gel Bubbles aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Tubes Gel Bubbles au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Tubes Gel Bubbles</h3>
+        <div class="card-meta"><span>Sensoriel</span><span class="stars" aria-label="Note 4.8 sur 5">★ 4,8</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">97 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="mangue-squishy">
+      <div class="card-media">
+        <img class="" src="images/mangue-squishy.jpg" alt="Mangue Slow Rising" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Mangue Slow Rising aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Mangue Slow Rising au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Mangue Slow Rising</h3>
+        <div class="card-meta"><span>Fruits</span><span class="stars" aria-label="Note 4.9 sur 5">★ 4,9</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">129 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="glacons-squishy">
+      <div class="card-media">
+        <img class="" src="images/glacons-squishy.jpg" alt="Glaçons Squishy" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Glaçons Squishy aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Glaçons Squishy au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Glaçons Squishy</h3>
+        <div class="card-meta"><span>Sensoriel</span><span class="stars" aria-label="Note 4.7 sur 5">★ 4,7</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">153 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="beurre-sale-jaune">
+      <div class="card-media">
+        <img class="" src="images/beurre-sale-jaune.jpg" alt="Beurre Salé Jaune" loading="lazy" decoding="async" draggable="false">
+        
+        <button class="wish " data-act="wish" aria-label="Ajouter Beurre Salé Jaune aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Beurre Salé Jaune au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Beurre Salé Jaune</h3>
+        <div class="card-meta"><span>Gourmandises</span><span class="stars" aria-label="Note 4.8 sur 5">★ 4,8</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">86 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="raisin-perles">
+      <div class="card-media">
+        <img class="" src="images/raisin-perles.jpg" alt="Raisin Perles Géantes" loading="lazy" decoding="async" draggable="false">
+        <span class="badge best">Best-seller</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Raisin Perles Géantes aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Raisin Perles Géantes au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Raisin Perles Géantes</h3>
+        <div class="card-meta"><span>Sensoriel</span><span class="stars" aria-label="Note 4.9 sur 5">★ 4,9</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">159 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="beurre-mochi">
+      <div class="card-media">
+        <img class="" src="images/beurre-mochi.jpg" alt="Beurre Mochi Étirable" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Beurre Mochi Étirable aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Beurre Mochi Étirable au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Beurre Mochi Étirable</h3>
+        <div class="card-meta"><span>Gourmandises</span><span class="stars" aria-label="Note 5.0 sur 5">★ 5,0</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">105 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="fruits-billes">
+      <div class="card-media">
+        <img class="" src="images/fruits-billes.jpg" alt="Fruits Billes Gel" loading="lazy" decoding="async" draggable="false">
+        
+        <button class="wish " data-act="wish" aria-label="Ajouter Fruits Billes Gel aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Fruits Billes Gel au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Fruits Billes Gel</h3>
+        <div class="card-meta"><span>Sensoriel</span><span class="stars" aria-label="Note 4.8 sur 5">★ 4,8</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-urgent">Plus que 8 en stock</div>
+      </div>
+    </article><article class="card" data-id="lingot-or">
+      <div class="card-media">
+        <img class="" src="images/lingot-or.jpg" alt="Lingot d'Or Squishy" loading="lazy" decoding="async" draggable="false">
+        <span class="badge limited">Édition limitée</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Lingot d'Or Squishy aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Lingot d'Or Squishy au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Lingot d'Or Squishy</h3>
+        <div class="card-meta"><span>Fantaisie</span><span class="stars" aria-label="Note 4.8 sur 5">★ 4,8</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">64 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="batons-perles">
+      <div class="card-media">
+        <img class="" src="images/batons-perles.jpg" alt="Bâtons Perles Sensoriels" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Bâtons Perles Sensoriels aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Bâtons Perles Sensoriels au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Bâtons Perles Sensoriels</h3>
+        <div class="card-meta"><span>Sensoriel</span><span class="stars" aria-label="Note 4.7 sur 5">★ 4,7</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-urgent">Plus que 4 en stock</div>
+      </div>
+    </article><article class="card" data-id="boule-perles">
+      <div class="card-media">
+        <img class="" src="images/boule-perles.jpg" alt="Boule Perles Arc-en-ciel" loading="lazy" decoding="async" draggable="false">
+        
+        <button class="wish " data-act="wish" aria-label="Ajouter Boule Perles Arc-en-ciel aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Boule Perles Arc-en-ciel au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Boule Perles Arc-en-ciel</h3>
+        <div class="card-meta"><span>Sensoriel</span><span class="stars" aria-label="Note 4.9 sur 5">★ 4,9</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-urgent">Plus que 3 en stock</div>
+      </div>
+    </article><article class="card" data-id="savons-squishy">
+      <div class="card-media">
+        <img class="" src="images/savons-squishy.jpg" alt="Savon Squishy" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Savon Squishy aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Savon Squishy au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Savon Squishy</h3>
+        <div class="card-meta"><span>Fantaisie</span><span class="stars" aria-label="Note 4.7 sur 5">★ 4,7</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-urgent">Plus que 3 en stock</div>
+      </div>
+    </article><article class="card" data-id="beurre-sale-rose">
+      <div class="card-media">
+        <img class="" src="images/beurre-sale-rose.jpg" alt="Beurre Salé Rose" loading="lazy" decoding="async" draggable="false">
+        
+        <button class="wish " data-act="wish" aria-label="Ajouter Beurre Salé Rose aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Beurre Salé Rose au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Beurre Salé Rose</h3>
+        <div class="card-meta"><span>Gourmandises</span><span class="stars" aria-label="Note 4.8 sur 5">★ 4,8</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">172 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="boules-paillettes">
+      <div class="card-media">
+        <img class="" src="images/boules-paillettes.jpg" alt="Boules Paillettes Kawaii" loading="lazy" decoding="async" draggable="false">
+        <span class="badge best">Best-seller</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Boules Paillettes Kawaii aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Boules Paillettes Kawaii au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Boules Paillettes Kawaii</h3>
+        <div class="card-meta"><span>Sensoriel</span><span class="stars" aria-label="Note 4.9 sur 5">★ 4,9</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">145 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="donuts-pastel">
+      <div class="card-media">
+        <img class="" src="images/donuts-pastel.jpg" alt="Donut Pastel Glacé" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Donut Pastel Glacé aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Donut Pastel Glacé au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Donut Pastel Glacé</h3>
+        <div class="card-meta"><span>Gourmandises</span><span class="stars" aria-label="Note 4.8 sur 5">★ 4,8</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">56 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="pasteque-juicy">
+      <div class="card-media">
+        <img class="" src="images/pasteque-juicy.jpg" alt="Pastèque Juicy" loading="lazy" decoding="async" draggable="false">
+        <span class="badge best">Best-seller</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Pastèque Juicy aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Pastèque Juicy au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Pastèque Juicy</h3>
+        <div class="card-meta"><span>Fruits</span><span class="stars" aria-label="Note 4.9 sur 5">★ 4,9</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-urgent">Plus que 3 en stock</div>
+      </div>
+    </article><article class="card" data-id="tablette-choco">
+      <div class="card-media">
+        <img class="" src="images/tablette-choco.jpg" alt="Tablette Chocolat Squishy" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Tablette Chocolat Squishy aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Tablette Chocolat Squishy au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Tablette Chocolat Squishy</h3>
+        <div class="card-meta"><span>Gourmandises</span><span class="stars" aria-label="Note 4.7 sur 5">★ 4,7</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">225 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="beurre-rose">
+      <div class="card-media">
+        <img class="" src="images/beurre-rose.jpg" alt="Butter Soft &amp; Chewy Rose" loading="lazy" decoding="async" draggable="false">
+        <span class="badge new">Nouveau</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Butter Soft &amp; Chewy Rose aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Butter Soft &amp; Chewy Rose au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Butter Soft &amp; Chewy Rose</h3>
+        <div class="card-meta"><span>Gourmandises</span><span class="stars" aria-label="Note 4.8 sur 5">★ 4,8</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">64 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="beurre-jelly">
+      <div class="card-media">
+        <img class="" src="images/beurre-jelly.jpg" alt="Butter Jelly Géant" loading="lazy" decoding="async" draggable="false">
+        <span class="badge limited">Édition limitée</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Butter Jelly Géant aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Butter Jelly Géant au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Butter Jelly Géant</h3>
+        <div class="card-meta"><span>Gourmandises</span><span class="stars" aria-label="Note 4.9 sur 5">★ 4,9</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">181 vendus cette semaine</div>
+      </div>
+    </article></div>
+        <div class="more"><button class="btn btn-outline" id="moreBtn">Afficher plus</button></div>
+        <div class="empty" id="emptyState" hidden>
+          <h3>Aucun squishy ne correspond</h3>
+          <p>Essaie un autre univers ou une autre recherche.</p>
+          <button class="btn btn-dark" id="emptyReset">Voir tous les squishies</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEST-SELLERS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head split">
+          <div>
+            <span class="kicker">Best-sellers</span>
+            <h2>Les préférés de la communauté</h2>
+          </div>
+          <a href="#boutique" class="link-arrow">Voir toute la boutique</a>
+        </div>
+        <div class="grid" id="bestGrid"><article class="card" data-id="raisin-perles">
+      <div class="card-media">
+        <img class="" src="images/raisin-perles.jpg" alt="Raisin Perles Géantes" loading="lazy" decoding="async" draggable="false">
+        <span class="badge best">Best-seller</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Raisin Perles Géantes aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Raisin Perles Géantes au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Raisin Perles Géantes</h3>
+        <div class="card-meta"><span>Sensoriel</span><span class="stars" aria-label="Note 4.9 sur 5">★ 4,9</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">159 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="boules-paillettes">
+      <div class="card-media">
+        <img class="" src="images/boules-paillettes.jpg" alt="Boules Paillettes Kawaii" loading="lazy" decoding="async" draggable="false">
+        <span class="badge best">Best-seller</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Boules Paillettes Kawaii aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Boules Paillettes Kawaii au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Boules Paillettes Kawaii</h3>
+        <div class="card-meta"><span>Sensoriel</span><span class="stars" aria-label="Note 4.9 sur 5">★ 4,9</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">145 vendus cette semaine</div>
+      </div>
+    </article><article class="card" data-id="boule-mouchetee">
+      <div class="card-media">
+        <img class="" src="images/boule-mouchetee.jpg" alt="Boule Mouchetée" loading="lazy" decoding="async" draggable="false">
+        <span class="badge best">Best-seller</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Boule Mouchetée aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Boule Mouchetée au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Boule Mouchetée</h3>
+        <div class="card-meta"><span>Sensoriel</span><span class="stars" aria-label="Note 4.9 sur 5">★ 4,9</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-urgent">Plus que 6 en stock</div>
+      </div>
+    </article><article class="card" data-id="boule-rose-douce">
+      <div class="card-media">
+        <img class="" src="images/boule-rose-douce.jpg" alt="Boule Rose Douce" loading="lazy" decoding="async" draggable="false">
+        <span class="badge best">Best-seller</span>
+        <button class="wish " data-act="wish" aria-label="Ajouter Boule Rose Douce aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5C19 15.6 12 20 12 20z"></path></svg></button>
+        <button class="quick-add " data-act="add" aria-label="Ajouter Boule Rose Douce au panier"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg><span>Ajouter</span></button>
+      </div>
+      <div class="card-body">
+        <h3>Boule Rose Douce</h3>
+        <div class="card-meta"><span>Sensoriel</span><span class="stars" aria-label="Note 4.9 sur 5">★ 4,9</span></div>
+        <div class="card-price">2,00 €</div>
+        <div class="card-sold">191 vendus cette semaine</div>
+      </div>
+    </article></div>
+      </div>
+    </section>
+
+    <section class="section section-tight" id="comment">
+      <div class="container">
+        <div class="section-head center"><h2>Comment ça marche</h2></div>
+        <ol class="steps">
+          <li><b>1</b><div><h3>Choisis ton pack</h3><p>1, 2, 6 ou 12 squishies : plus tu en prends, moins ils coûtent.</p></div></li>
+          <li><b>2</b><div><h3>Sélectionne tes préférés</h3><p>Mélange les modèles comme tu veux, on compte pour toi.</p></div></li>
+          <li><b>3</b><div><h3>Reçois-les en 3 jours</h3><p>Livraison offerte, expédition le jour même avant 14 h.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- AVIS -->
+    <section class="section section-soft" id="avis">
+      <div class="container">
+        <div class="section-head center">
+          <span class="kicker">Avis</span>
+          <h2>Ils en parlent mieux que nous</h2>
+          <div class="rating-sum"><b>4,9</b><span><span class="stars-big">★★★★★</span><small>sur 3 214 avis vérifiés</small></span></div>
+        </div>
+        <div class="reviews" id="reviewGrid"><figure class="review reveal">
+      <div class="review-stars">★★★★★</div>
+      <blockquote>Je l'ai emmené au collège et toute ma classe veut le même. Les perles sous les doigts, c'est hypnotisant.</blockquote>
+      <figcaption><img class="" src="images/raisin-perles.jpg" alt="Raisin Perles Géantes" loading="lazy" decoding="async" draggable="false"><span><b>Léa</b><small>14 ans · Raisin Perles Géantes</small></span></figcaption>
+    </figure><figure class="review reveal">
+      <div class="review-stars">★★★★★</div>
+      <blockquote>Commandé pour ma fille, finalement il est sur mon bureau. Parfait pendant les réunions.</blockquote>
+      <figcaption><img class="" src="images/beurre-sale-jaune.jpg" alt="Beurre Salé Jaune" loading="lazy" decoding="async" draggable="false"><span><b>Thomas</b><small>papa de 2 enfants · Beurre Salé Jaune</small></span></figcaption>
+    </figure><figure class="review reveal">
+      <div class="review-stars">★★★★★</div>
+      <blockquote>La texture qui s'étire est complètement folle. Mon rituel anti-stress pendant les partiels.</blockquote>
+      <figcaption><img class="" src="images/beurre-mochi.jpg" alt="Beurre Mochi Étirable" loading="lazy" decoding="async" draggable="false"><span><b>Inès</b><small>étudiante · Beurre Mochi Étirable</small></span></figcaption>
+    </figure><figure class="review reveal">
+      <div class="review-stars">★★★★★</div>
+      <blockquote>J'ai plus de 40 squishies et le donut est un des plus réalistes que j'ai.</blockquote>
+      <figcaption><img class="" src="images/donuts-pastel.jpg" alt="Donut Pastel Glacé" loading="lazy" decoding="async" draggable="false"><span><b>Maëlys</b><small>collectionneuse · Donut Pastel Glacé</small></span></figcaption>
+    </figure><figure class="review reveal">
+      <div class="review-stars">★★★★☆</div>
+      <blockquote>Les oursons sont trop drôles, on dirait des vrais bonbons. Livré super vite.</blockquote>
+      <figcaption><img class="" src="images/oursons-gummy.jpg" alt="Oursons Gummy Géants" loading="lazy" decoding="async" draggable="false"><span><b>Yanis</b><small>11 ans · Oursons Gummy Géants</small></span></figcaption>
+    </figure><figure class="review reveal">
+      <div class="review-stars">★★★★★</div>
+      <blockquote>Petit format qui tient dans la poche de ma blouse. Ça m'aide vraiment à décompresser entre deux gardes.</blockquote>
+      <figcaption><img class="" src="images/glacons-squishy.jpg" alt="Glaçons Squishy" loading="lazy" decoding="async" draggable="false"><span><b>Camille</b><small>infirmière · Glaçons Squishy</small></span></figcaption>
+    </figure></div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="guarantee">
+        <div class="g-seal">30<small>jours</small></div>
+        <div><h2>Satisfait ou remboursé, sans question</h2>
+        <p>Si tes squishies ne te plaisent pas, renvoie-les dans les 30 jours : on te rembourse sous 5 jours ouvrés. Zéro risque pour toi.</p></div>
+        <a href="#packs" class="btn btn-cta">Choisir mon pack</a>
+      </div>
+    </section>
+
+    <!-- HALLOWEEN -->
+    <section class="container" id="halloween">
+      <div class="feature feature-dark reveal">
+        <div class="feature-media"><img src="images/box-halloween.jpg" alt="La box Squish or Treat et ses squishies Halloween" loading="lazy" /></div>
+        <div class="feature-copy">
+          <span class="kicker">Collection Halloween</span>
+          <h2>Squish or Treat</h2>
+          <p>Citrouilles sculptées, petit fantôme, potions et pommes d'amour : une édition de saison, douce et un peu frissonnante.</p>
+          <div class="feature-thumbs" id="hwThumbs"><button data-id="tube-paillettes-halloween" aria-label="Tube Paillettes Halloween"><img class="" src="images/tube-paillettes-halloween.jpg" alt="Tube Paillettes Halloween" loading="lazy" decoding="async" draggable="false"></button><button data-id="citrouille-doree" aria-label="Citrouille Dorée"><img class="" src="images/citrouille-doree.jpg" alt="Citrouille Dorée" loading="lazy" decoding="async" draggable="false"></button><button data-id="pomme-araignee" aria-label="Pomme Toile d'Araignée"><img class="" src="images/pomme-araignee.jpg" alt="Pomme Toile d'Araignée" loading="lazy" decoding="async" draggable="false"></button><button data-id="fiole-potion" aria-label="Fiole Potion Magique"><img class="" src="images/fiole-potion.jpg" alt="Fiole Potion Magique" loading="lazy" decoding="async" draggable="false"></button></div>
+          <a href="#boutique" class="btn btn-light" data-filter-cat="halloween">Voir la collection</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALENDRIER -->
+    <section class="container" id="calendrier">
+      <div class="feature feature-advent reveal">
+        <div class="feature-copy">
+          <span class="kicker">Édition Noël</span>
+          <h2>Le calendrier de l'Avent Squishy</h2>
+          <p>24 cases, un squishy surprise derrière chacune. Du 1<sup>er</sup> au 24 décembre, une nouvelle texture à découvrir chaque matin.</p>
+          <ul class="checks">
+            <li>24 squishies surprise</li>
+            <li>Perles, gel, slow rising et gourmandises</li>
+            <li>Livraison offerte en 3 jours</li>
+          </ul>
+          <div class="advent-buy">
+            <span class="price-xl" id="adventPrice"></span>
+            <a href="https://t.trklinkx.com/click?pid=5417&offer_id=13057&sub3=Squishia" class="btn btn-light" id="adventBtn">Commander le calendrier</a>
+          </div>
+        </div>
+        <div class="advent-box">
+          <div class="advent-grid" id="adventGrid"><button class="door " aria-label="Case 7">
+      <img class="" src="images/tube-paillettes-halloween.jpg" alt="Tube Paillettes Halloween" loading="lazy" decoding="async" draggable="false"><span class="door-face">7</span></button><button class="door " aria-label="Case 19">
+      <img class="" src="images/pochettes-gel.jpg" alt="Pochettes Gel Mellow" loading="lazy" decoding="async" draggable="false"><span class="door-face">19</span></button><button class="door " aria-label="Case 2">
+      <img class="" src="images/donut-menthe.jpg" alt="Donut Menthe Givrée" loading="lazy" decoding="async" draggable="false"><span class="door-face">2</span></button><button class="door " aria-label="Case 13">
+      <img class="" src="images/fiole-potion.jpg" alt="Fiole Potion Magique" loading="lazy" decoding="async" draggable="false"><span class="door-face">13</span></button><button class="door big" aria-label="Case 24">
+      <img class="" src="images/cube-fromage.jpg" alt="Cube Fromage Squishy" loading="lazy" decoding="async" draggable="false"><span class="door-face">24</span></button><button class="door " aria-label="Case 9">
+      <img class="" src="images/boule-choco-caramel.jpg" alt="Boule Choco Caramel" loading="lazy" decoding="async" draggable="false"><span class="door-face">9</span></button><button class="door " aria-label="Case 16">
+      <img class="" src="images/pochette-galaxie.jpg" alt="Pochette Paillettes Galaxie" loading="lazy" decoding="async" draggable="false"><span class="door-face">16</span></button><button class="door " aria-label="Case 4">
+      <img class="" src="images/porte-cles-perles.jpg" alt="Porte-clés Perles Bleues" loading="lazy" decoding="async" draggable="false"><span class="door-face">4</span></button><button class="door " aria-label="Case 21">
+      <img class="" src="images/tubes-gel.jpg" alt="Tubes Gel Bubbles" loading="lazy" decoding="async" draggable="false"><span class="door-face">21</span></button><button class="door " aria-label="Case 11">
+      <img class="" src="images/beurre-sale-jaune.jpg" alt="Beurre Salé Jaune" loading="lazy" decoding="async" draggable="false"><span class="door-face">11</span></button><button class="door " aria-label="Case 1">
+      <img class="" src="images/fruits-billes.jpg" alt="Fruits Billes Gel" loading="lazy" decoding="async" draggable="false"><span class="door-face">1</span></button><button class="door " aria-label="Case 18">
+      <img class="" src="images/boule-perles.jpg" alt="Boule Perles Arc-en-ciel" loading="lazy" decoding="async" draggable="false"><span class="door-face">18</span></button><button class="door " aria-label="Case 6">
+      <img class="" src="images/boules-paillettes.jpg" alt="Boules Paillettes Kawaii" loading="lazy" decoding="async" draggable="false"><span class="door-face">6</span></button><button class="door " aria-label="Case 23">
+      <img class="" src="images/tablette-choco.jpg" alt="Tablette Chocolat Squishy" loading="lazy" decoding="async" draggable="false"><span class="door-face">23</span></button><button class="door " aria-label="Case 14">
+      <img class="" src="images/tube-paillettes-halloween.jpg" alt="Tube Paillettes Halloween" loading="lazy" decoding="async" draggable="false"><span class="door-face">14</span></button><button class="door " aria-label="Case 3">
+      <img class="" src="images/pochettes-gel.jpg" alt="Pochettes Gel Mellow" loading="lazy" decoding="async" draggable="false"><span class="door-face">3</span></button><button class="door " aria-label="Case 20">
+      <img class="" src="images/donut-menthe.jpg" alt="Donut Menthe Givrée" loading="lazy" decoding="async" draggable="false"><span class="door-face">20</span></button><button class="door " aria-label="Case 10">
+      <img class="" src="images/fiole-potion.jpg" alt="Fiole Potion Magique" loading="lazy" decoding="async" draggable="false"><span class="door-face">10</span></button><button class="door " aria-label="Case 15">
+      <img class="" src="images/cube-fromage.jpg" alt="Cube Fromage Squishy" loading="lazy" decoding="async" draggable="false"><span class="door-face">15</span></button><button class="door " aria-label="Case 22">
+      <img class="" src="images/boule-choco-caramel.jpg" alt="Boule Choco Caramel" loading="lazy" decoding="async" draggable="false"><span class="door-face">22</span></button><button class="door " aria-label="Case 5">
+      <img class="" src="images/pochette-galaxie.jpg" alt="Pochette Paillettes Galaxie" loading="lazy" decoding="async" draggable="false"><span class="door-face">5</span></button><button class="door " aria-label="Case 12">
+      <img class="" src="images/porte-cles-perles.jpg" alt="Porte-clés Perles Bleues" loading="lazy" decoding="async" draggable="false"><span class="door-face">12</span></button><button class="door " aria-label="Case 17">
+      <img class="" src="images/tubes-gel.jpg" alt="Tubes Gel Bubbles" loading="lazy" decoding="async" draggable="false"><span class="door-face">17</span></button><button class="door " aria-label="Case 8">
+      <img class="" src="images/beurre-sale-jaune.jpg" alt="Beurre Salé Jaune" loading="lazy" decoding="async" draggable="false"><span class="door-face">8</span></button></div>
+          <small>Ouvre une case pour voir un exemple de surprise</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container faq-wrap">
+        <div class="section-head">
+          <span class="kicker">Aide</span>
+          <h2>Questions fréquentes</h2>
+          <p>Une autre question ? Écris-nous, on répond en moins de 24 h.</p>
+        </div>
+        <div class="faq" id="faqList"><details class="faq-item" open=""><summary>Qu'est-ce qu'un squishy « slow rising » ?</summary><p>C'est un squishy fabriqué en mousse polyuréthane haute densité qui reprend sa forme très lentement après avoir été écrasé. Chez nous, le temps de remontée est indiqué sur chaque fiche : de 4 secondes pour les plus rebondissants à 14 secondes pour les plus lents.</p></details><details class="faq-item"><summary>Vos squishies sont-ils sans danger ?</summary><p>Oui. Toutes nos mousses sont certifiées EN71 (norme européenne de sécurité des jouets), sans phtalates et testées en laboratoire. Nos parfums sont légers et hypoallergéniques. Recommandé à partir de 3 ans.</p></details><details class="faq-item"><summary>Combien de squishies puis-je commander ?</summary><p>Pour que tout le monde puisse en profiter, tu peux en prendre jusqu'à 12 par commande. Plus tu en prends, moins tu paies : 1 squishy 2 €, 2 squishies 3,95 €, 6 squishies 9,99 €, 12 squishies 19,99 €.</p></details><details class="faq-item"><summary>Quels sont les délais de livraison ?</summary><p>Ta commande arrive en 3 jours, et la livraison est gratuite. Les commandes passées avant 14 h partent le jour même.</p></details><details class="faq-item"><summary>Comment entretenir mon squishy ?</summary><p>Nettoie-le délicatement avec un chiffon humide et un peu de savon doux, puis laisse-le sécher à l'air libre. Évite la machine à laver, le sèche-cheveux et le soleil direct qui peuvent abîmer la mousse.</p></details><details class="faq-item"><summary>Puis-je retourner un article ?</summary><p>Bien sûr. Tu as 30 jours après réception pour nous retourner un article non utilisé dans son emballage d'origine. Le remboursement est effectué sous 5 jours ouvrés.</p></details></div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="final-cta">
+        <span class="kicker">Prêt à craquer ?</span>
+        <h2>Ton pack de squishies t'attend</h2>
+        <p>Dès 2 € · Livraison offerte en 3 jours · Satisfait ou remboursé 30 jours</p>
+        <a href="#packs" class="btn btn-cta">Composer mon pack dès 3,95 €</a>
+        <small>Expédié aujourd'hui pour toute commande avant 14 h</small>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo">Squishia</span>
+        <p>Des squishies doux et satisfaisants, choisis un par un et expédiés avec soin.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Boutique</h4>
+        <a href="#boutique" data-filter-cat="sensoriel">Sensoriel</a>
+        <a href="#boutique" data-filter-cat="gourmandises">Gourmandises</a>
+        <a href="#boutique" data-filter-cat="fruits">Fruits</a>
+        <a href="#boutique" data-filter-cat="halloween">Halloween</a>
+        <a href="#packs">Packs</a>
+        <a href="#calendrier">Calendrier de l'Avent</a>
+      </div>
+      <div class="footer-col">
+        <h4>Aide</h4>
+        <a href="#faq">Livraison</a>
+        <a href="#faq">Retours</a>
+        <a href="#faq">Entretien</a>
+        <a href="#faq">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Paiement</h4>
+        <div class="pay"><span>CB</span><span>Visa</span><span>PayPal</span><span>Apple Pay</span></div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 Squishia</span>
+      <span>Mentions légales · CGV · Confidentialité</span>
+    </div>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Panier / favoris -->
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <div class="drawer-tabs">
+        <button class="drawer-tab active" data-tab="cart">Panier <span id="drawerCartCount">0</span></button>
+        <button class="drawer-tab" data-tab="wish">Favoris <span id="drawerWishCount">0</span></button>
+      </div>
+      <button class="icon-btn" data-close aria-label="Fermer"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <div class="pack-note" id="packNote"></div>
+    <div class="drawer-body" id="drawerBody"></div>
+    <div class="drawer-foot" id="drawerFoot">
+      <div class="totals" id="totals"></div>
+      <details class="promo" id="promo"><summary>Un code promo ?</summary>
+        <form id="promoForm"><input id="promoInput" placeholder="Ton code" autocomplete="off" /><button class="btn btn-outline" type="submit">Appliquer</button></form>
+        <small class="promo-msg" id="promoMsg"></small></details>
+      <button class="btn btn-cta w-full" id="checkoutBtn">Passer commande</button>
+      <ul class="foot-perks"><li>🔒 Paiement sécurisé</li><li>🚚 Livraison offerte</li><li>↩ Retours 30 jours</li></ul>
+      <div class="pay-chips"><span>CB</span><span>Visa</span><span>PayPal</span><span>Apple Pay</span></div>
+    </div>
+  </aside>
+
+  <!-- Fiche produit -->
+  <div class="modal" id="productModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <button class="icon-btn modal-close" data-close aria-label="Fermer"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      <div class="pm" id="pmContent"></div>
+    </div>
+  </div>
+
+
+  <!-- Paiement -->
+  <div class="modal" id="checkoutModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card co-card">
+      <button class="icon-btn modal-close" data-close aria-label="Fermer"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      <div class="co" id="coContent"></div>
+    </div>
+  </div>
+
+  <!-- Barre mobile -->
+  <a href="#packs" class="mobile-cta" id="mobileCta">Composer mon pack dès 3,95 €</a>
+
+  <div class="toasts" id="toasts"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

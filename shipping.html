@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Livraison — Squishia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/cro.css" />
+  <style>
+    body { background: var(--bg); }
+    .sh-head { border-bottom: 1px solid var(--line); background: var(--bg); }
+    .sh-head-in { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .sh-head .logo { font-size: 26px; }
+    .sh-back { font-size: 14px; color: var(--ink-2); }
+    .sh-secure { font-size: 13px; font-weight: 600; color: var(--good); }
+    .sh { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; padding: 44px 0 80px; align-items: start; }
+    .sh h1 { font-family: var(--serif); font-size: 34px; letter-spacing: -.02em; }
+    .sh .sub { color: var(--ink-2); margin: 6px 0 26px; font-size: 15px; }
+    .steps { display: flex; gap: 8px; align-items: center; font-size: 13px; color: var(--ink-3); margin-bottom: 20px; }
+    .steps b { color: var(--ink); }
+    .grid-f { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .field { display: grid; gap: 6px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-size: 13px; font-weight: 600; color: var(--ink-2); }
+    .field input, .field select { width: 100%; height: 52px; padding: 0 16px; border-radius: 12px; border: 1.5px solid var(--line); background: #fff; font-size: 16px; outline: 0; transition: border-color .15s, box-shadow .15s; }
+    .field input:focus, .field select:focus { border-color: var(--ink); box-shadow: 0 0 0 3px rgba(20,24,26,.08); }
+    .field.err input, .field.err select { border-color: #D92D20; }
+    .field .msg { display: none; font-size: 12.5px; color: #D92D20; }
+    .field.err .msg { display: block; }
+    .phone { display: grid; grid-template-columns: 112px 1fr; gap: 8px; }
+    .go { margin-top: 22px; width: 100%; height: 60px; font-size: 17px; }
+    .go[disabled] { opacity: .7; pointer-events: none; }
+    .sh-note { margin-top: 14px; text-align: center; font-size: 12.5px; color: var(--ink-3); }
+    .sum { position: sticky; top: 24px; background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 26px; }
+    .sum h2 { font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 16px; }
+    .s-item { display: grid; grid-template-columns: 64px 1fr auto; gap: 14px; align-items: center; padding: 10px 0; }
+    .s-item .ph { position: relative; width: 64px; height: 64px; }
+    .s-item img { width: 64px; height: 64px; border-radius: 12px; object-fit: cover; background: var(--sand); }
+    .s-item .q { position: absolute; top: -7px; right: -7px; min-width: 22px; height: 22px; border-radius: 99px; background: var(--ink); color: #fff; font-size: 12px; font-weight: 700; display: grid; place-items: center; padding: 0 5px; }
+    .s-item b { font-size: 14.5px; font-weight: 600; line-height: 1.3; display: block; }
+    .s-item small { color: var(--ink-3); font-size: 12.5px; }
+    .s-tot { display: flex; justify-content: space-between; padding: 6px 0; font-size: 14.5px; color: var(--ink-2); }
+    .s-tot.grand { margin-top: 10px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--ink); font-weight: 700; font-size: 20px; }
+    .s-tot .free { color: var(--good); font-weight: 700; }
+    .s-perks { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 8px; font-size: 13.5px; color: var(--ink-2); }
+    .s-perks li::before { content: '✓'; margin-right: 8px; color: var(--good); font-weight: 700; }
+    .sh-empty { text-align: center; padding: 100px 0; grid-column: 1 / -1; }
+    .sh-empty h2 { font-family: var(--serif); font-size: 28px; margin-bottom: 18px; }
+    .redirect { position: fixed; inset: 0; z-index: 200; background: var(--bg); display: none; place-items: center; text-align: center; padding: 24px; }
+    .redirect.show { display: grid; }
+    .redirect .spin { width: 44px; height: 44px; border-radius: 50%; border: 4px solid var(--line); border-top-color: var(--cta); animation: sp .8s linear infinite; margin: 0 auto 18px; }
+    @keyframes sp { to { transform: rotate(360deg); } }
+    .redirect a { display: none; margin-top: 12px; font-weight: 600; text-decoration: underline; }
+    .redirect a.show { display: inline-block; }
+    @media (max-width: 860px) {
+      .sh { grid-template-columns: 1fr; gap: 28px; padding-top: 24px; }
+      .sum { position: static; order: -1; padding: 18px; }
+      .sum .s-perks { display: none; }
+      .sh h1 { font-size: 28px; }
+      .grid-f { grid-template-columns: 1fr; }
+      .phone { grid-template-columns: 104px 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="sh-head">
+    <div class="container sh-head-in">
+      <a href="index.html" class="sh-back">← Retour</a>
+      <a href="index.html" class="logo"><img src="images/logo.png" alt="Squishia" style="height:52px;width:auto;display:block" /></a>
+      <span class="sh-secure">🔒 Sécurisé</span>
+    </div>
+  </header>
+
+  <main class="container sh" id="sh">
+    <section id="formCol">
+      <div class="steps"><b>1. Livraison</b> › 2. Paiement</div>
+      <h1>Où livrer ta commande ?</h1>
+      <p class="sub">30 secondes, puis tu arrives directement sur le paiement. Tes infos y sont déjà remplies.</p>
+      <form id="shipForm" novalidate autocomplete="on">
+        <div class="grid-f">
+          <div class="field" id="f-first"><label for="first">Prénom</label><input id="first" name="given-name" autocomplete="given-name" required /><span class="msg">Prénom requis</span></div>
+          <div class="field" id="f-last"><label for="last">Nom</label><input id="last" name="family-name" autocomplete="family-name" required /><span class="msg">Nom requis</span></div>
+          <div class="field full" id="f-email"><label for="email">Email</label><input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="toi@exemple.fr" required /><span class="msg">Email invalide</span></div>
+          <div class="field full" id="f-phone"><label for="phone">Téléphone</label>
+            <div class="phone"><select id="prefix" aria-label="Indicatif"></select><input id="phone" name="tel-national" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="6 12 34 56 78" required /></div>
+            <span class="msg">Numéro requis</span></div>
+          <div class="field full" id="f-address"><label for="address">Adresse</label><input id="address" name="address" autocomplete="street-address" required /><span class="msg">Adresse requise</span></div>
+          <div class="field" id="f-zip"><label for="zip">Code postal</label><input id="zip" name="postal-code" inputmode="numeric" autocomplete="postal-code" required /><span class="msg">Code postal requis</span></div>
+          <div class="field" id="f-city"><label for="city">Ville</label><input id="city" name="city" autocomplete="address-level2" required /><span class="msg">Ville requise</span></div>
+          <div class="field full" id="f-country"><label for="country">Pays</label><select id="country" name="country" autocomplete="country-name" required></select></div>
+        </div>
+        <button class="btn btn-cta go" id="go" type="submit">Continuer vers le paiement</button>
+        <p class="sh-note">🔒 Paiement sécurisé · Livraison offerte en 3 jours · Retours 30 jours</p>
+      </form>
+    </section>
+
+    <aside class="sum" id="sum"></aside>
+  </main>
+
+  <div class="redirect" id="redirect"><div><div class="spin"></div><h2 style="font-family:var(--serif);font-weight:500">Redirection vers le paiement…</h2><p style="color:var(--ink-2);margin-top:6px">Ne ferme pas cette page.</p><a id="redirectLink" href="#">Cliquer ici si rien ne se passe</a></div></div>
+
+  <script src="js/data.js"></script>
+  <script>
+  (function () {
+    const $ = id => document.getElementById(id);
+    const euro = n => n.toFixed(2).replace('.', ',') + ' €';
+    const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    const byId = Object.fromEntries(PRODUCTS.map(p => [p.id, p]));
+
+    /* ---------- Panier ---------- */
+    let cart = [];
+    try { cart = JSON.parse(localStorage.getItem('squishland:cart') || '[]'); } catch (e) { /* vide */ }
+    cart = cart.filter(i => i && byId[i.id] && i.qty > 0);
+    const n = cart.reduce((s, i) => s + i.qty, 0);
+    /* Pack exact ou pack supérieur le plus proche (meilleure valeur) */
+    const pack = PACKS.find(p => p.min >= n && p.url && p.url !== '#')
+               || PACKS.slice().reverse().find(p => p.url && p.url !== '#');
+    const coupon = (() => { try { return JSON.parse(localStorage.getItem('squishland:coupon') || 'false'); } catch (e) { return false; } })();
+    const sub = cart.reduce((s, i) => s + byId[i.id].price * i.qty, 0);
+    const total = pack ? pack.price : priceFor(n);
+
+    if (!n) {
+      document.querySelector('#sh').innerHTML = `<div class="sh-empty"><h2>Ton panier est vide</h2>
+        <p style="color:var(--ink-2);margin-bottom:22px">Ajoute des squishies pour continuer.</p><a class="btn btn-cta" href="index.html#boutique">Retour à la boutique</a></div>`;
+      return;
+    }
+
+    /* ---------- Récapitulatif ---------- */
+    $('sum').innerHTML = `<h2>Ta commande</h2>
+      ${cart.map(i => { const p = byId[i.id]; return `<div class="s-item"><div class="ph"><img src="images/${p.id}.jpg" alt="${esc(p.name)}" /><span class="q">${i.qty}</span></div><div><b>${esc(p.name)}</b><small>${esc(CATEGORIES[p.cat])}</small></div><span>${euro(p.price * i.qty)}</span></div>`; }).join('')}
+      <div style="margin-top:12px"><div class="s-tot"><span>Sous-total</span><span>${euro(sub)}</span></div>
+      ${sub - total > 0.001 ? `<div class="s-tot" style="color:var(--good)"><span>Remise pack</span><span>−${euro(sub - total)}</span></div>` : ''}
+      <div class="s-tot"><span>Livraison</span><span class="free">Offerte</span></div>
+      <div class="s-tot grand"><span>Total</span><span>${euro(total)}</span></div></div>
+      <ul class="s-perks"><li>Livraison offerte en 3 jours</li><li>Retours sous 30 jours</li><li>Paiement 100 % sécurisé</li></ul>`;
+
+    /* ---------- Pays / indicatifs ---------- */
+    const COUNTRIES = [
+      ['FR','France','🇫🇷','+33'],['BE','Belgique','🇧🇪','+32'],['CH','Suisse','🇨🇭','+41'],['LU','Luxembourg','🇱🇺','+352'],['MC','Monaco','🇲🇨','+377'],
+      ['CA','Canada','🇨🇦','+1'],['US','États-Unis','🇺🇸','+1'],['GB','Royaume-Uni','🇬🇧','+44'],['DE','Allemagne','🇩🇪','+49'],['ES','Espagne','🇪🇸','+34'],
+      ['IT','Italie','🇮🇹','+39'],['NL','Pays-Bas','🇳🇱','+31'],['PT','Portugal','🇵🇹','+351'],['AT','Autriche','🇦🇹','+43'],['PL','Pologne','🇵🇱','+48'],
+      ['SE','Suède','🇸🇪','+46'],['NO','Norvège','🇳🇴','+47'],['DK','Danemark','🇩🇰','+45'],['FI','Finlande','🇫🇮','+358'],['MA','Maroc','🇲🇦','+212'],
+      ['DZ','Algérie','🇩🇿','+213'],['TN','Tunisie','🇹🇳','+216'],['SN','Sénégal','🇸🇳','+221'],['CI',"Côte d'Ivoire",'🇨🇮','+225'],['CM','Cameroun','🇨🇲','+237'],
+      ['MU','Maurice','🇲🇺','+230'],['RE','Réunion','🇷🇪','+262'],['GP','Guadeloupe','🇬🇵','+590'],['MQ','Martinique','🇲🇶','+596'],['GF','Guyane','🇬🇫','+594'],
+      ['NC','Nouvelle-Calédonie','🇳🇨','+687'],['PF','Polynésie fr.','🇵🇫','+689']
+    ].map(([code, name, flag, tel]) => ({ code, name, flag, tel }));
+    $('country').innerHTML = COUNTRIES.map(c => `<option value="${esc(c.name)}">${c.flag}  ${esc(c.name)}</option>`).join('');
+    $('prefix').innerHTML = COUNTRIES.map((c, i) => `<option value="${c.tel}" data-i="${i}">${c.flag} ${c.tel}</option>`).join('');
+    const region = ((navigator.language || 'fr-FR').split('-')[1] || '').toUpperCase();
+    let start = Math.max(0, COUNTRIES.findIndex(c => c.code === region));
+    $('country').selectedIndex = start; $('prefix').selectedIndex = start;
+    $('country').addEventListener('change', () => { $('prefix').selectedIndex = $('country').selectedIndex; });
+    $('prefix').addEventListener('change', () => {
+      const i = COUNTRIES.findIndex(c => c.tel === $('prefix').value);
+      if (i >= 0 && COUNTRIES[$('country').selectedIndex].tel !== $('prefix').value) $('country').selectedIndex = i;
+    });
+
+    /* ---------- Brouillon (sauvegarde locale pour ne rien retaper) ---------- */
+    const FIELDS = ['first', 'last', 'email', 'phone', 'address', 'zip', 'city'];
+    try {
+      const d = JSON.parse(localStorage.getItem('squishia:ship') || '{}');
+      FIELDS.forEach(k => { if (d[k]) $(k).value = d[k]; });
+      if (d.country) $('country').value = d.country;
+      if (d.prefix) $('prefix').value = d.prefix;
+    } catch (e) { /* ignoré */ }
+    const saveDraft = () => { try { const d = { country: $('country').value, prefix: $('prefix').value }; FIELDS.forEach(k => d[k] = $(k).value); localStorage.setItem('squishia:ship', JSON.stringify(d)); } catch (e) { /* ignoré */ } };
+    FIELDS.forEach(k => $(k).addEventListener('input', () => { $('f-' + k).classList.remove('err'); saveDraft(); }));
+    $('country').addEventListener('change', saveDraft); $('prefix').addEventListener('change', saveDraft);
+
+    /* ---------- Envoi vers l'offre avec les sub ID ---------- */
+    $('shipForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const v = k => $(k).value.trim();
+      const bad = {
+        first: !v('first'), last: !v('last'),
+        email: !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v('email')),
+        phone: v('phone').replace(/\D/g, '').length < 6,
+        address: !v('address'), zip: !v('zip'), city: !v('city')
+      };
+      let first = null;
+      FIELDS.forEach(k => { $('f-' + k).classList.toggle('err', !!bad[k]); if (bad[k] && !first) first = k; });
+      if (first) { $(first).focus(); return; }
+
+      let num = v('phone').replace(/[\s.\-()]/g, '');
+      if (num.startsWith('+')) num = num.slice(1);   /* numéro déjà saisi avec indicatif : on le garde tel quel */
+      else if (num.startsWith('0')) num = num.slice(1);
+      const phone = v('phone').trim().startsWith('+') ? '+' + num : $('prefix').value + num;
+
+      const q = encodeURIComponent;
+      const url = pack.url
+        + '&sub9=' + q(v('first'))
+        + '&sub10=' + q(v('last'))
+        + '&sub11=' + q(v('email'))
+        + '&sub12=' + q(phone)
+        + '&sub13=' + q(v('address'))
+        + '&sub14=' + q(v('zip'))
+        + '&sub15=' + q(v('city'))
+        + '&sub16=' + q($('country').value);
+
+      saveDraft();
+      $('go').disabled = true;
+      $('redirectLink').href = url;
+      $('redirect').classList.add('show');
+      setTimeout(() => location.assign(url), 600);
+      setTimeout(() => $('redirectLink').classList.add('show'), 4000);
+    });
+
+    /* Retour arrière depuis le paiement : on remet la page en état */
+    addEventListener('pageshow', e => {
+      if (!e.persisted) return;
+      $('redirect').classList.remove('show'); $('redirectLink').classList.remove('show'); $('go').disabled = false;
+    });
+  })();
+  </script>
+</body>
+</html>
